@@ -49,6 +49,7 @@ const Register = ()=>{
                             email: '',
                             phoneNumber: '',
                             permanentAddress: '',
+                            userRole:'',
                             password: '',
                             zipCode: ''
                         }}
@@ -68,6 +69,12 @@ const Register = ()=>{
 
                                 <Field name="phoneNumber" placeholder="Your phoneNumber" value={values.phoneNumber} onChange={handleChange} onBlur={handleBlur} />
                                 {errors.phoneNumber && touched.phoneNumber ? (<div className="error">{errors.phoneNumber}</div>) : null}
+
+                                <select name="userRole"value={values.userRole}onChange={handleChange} onBlur={handleBlur}>
+                  <option value=""disabled="disabled" label="Select a Role"></option>
+                  <option value="user" label="User">User </option>
+                  <option value="rider" label="Rider">Admin</option></select>
+                {errors.userRole && touched.userRole ? (<div className="error">{errors.userRole}</div>) : null}
 
                                 <Field name="permanentAddress" placeholder="Your Address" value={values.permanentAddress} onChange={handleChange} onBlur={handleBlur} />
                                 {errors.permanentAddress && touched.permanentAddress ? (<div className="error">{errors.permanentAddress}</div>) : null}
